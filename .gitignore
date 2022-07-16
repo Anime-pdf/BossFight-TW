@@ -79,6 +79,7 @@ generated
 target
 
 /build*
+/cmake-build*
 /integration_test/*
 
 # IDE project files

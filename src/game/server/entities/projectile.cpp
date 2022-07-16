@@ -10,7 +10,7 @@
 #include <game/version.h>
 
 #include <game/server/gamecontext.h>
-#include <game/server/gamemodes/DDRace.h>
+#include <game/server/gamemodes/BossFight.h>
 
 CProjectile::CProjectile(
 	CGameWorld *pGameWorld,

@@ -2333,8 +2333,8 @@ if(SERVER)
     gamecontext.h
     gamecontroller.cpp
     gamecontroller.h
-    gamemodes/DDRace.cpp
-    gamemodes/DDRace.h
+    gamemodes/BossFight.cpp
+    gamemodes/BossFight.h
     gameworld.cpp
     gameworld.h
     player.cpp

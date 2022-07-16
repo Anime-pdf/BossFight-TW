@@ -1,5 +1,5 @@
 #include "score.h"
-#include "gamemodes/DDRace.h"
+#include "gamemodes/BossFight.h"
 #include "player.h"
 #include "save.h"
 #include "scoreworker.h"

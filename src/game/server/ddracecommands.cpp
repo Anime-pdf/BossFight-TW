@@ -5,7 +5,7 @@
 
 #include <engine/shared/config.h>
 #include <game/server/entities/character.h>
-#include <game/server/gamemodes/DDRace.h>
+#include <game/server/gamemodes/BossFight.h>
 #include <game/server/player.h>
 #include <game/server/save.h>
 #include <game/server/teams.h>

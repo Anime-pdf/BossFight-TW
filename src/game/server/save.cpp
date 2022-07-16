@@ -3,7 +3,7 @@
 #include <cstdio>
 
 #include "entities/character.h"
-#include "gamemodes/DDRace.h"
+#include "gamemodes/BossFight.h"
 #include "player.h"
 #include "teams.h"
 #include <engine/shared/config.h>

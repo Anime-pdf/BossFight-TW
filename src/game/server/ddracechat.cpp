@@ -2,8 +2,8 @@
 #include "gamecontext.h"
 #include <engine/shared/config.h>
 #include <engine/shared/protocol.h>
-#include <game/server/gamemodes/DDRace.h>
 #include <game/server/teams.h>
+#include <game/server/gamemodes/BossFight.h>
 #include <game/version.h>
 
 #include "entities/character.h"
