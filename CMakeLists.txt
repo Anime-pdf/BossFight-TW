@@ -133,6 +133,8 @@ option(EXCEPTION_HANDLING "Enable exception handling (only works with Windows as
 option(IPO "Enable interprocedural optimizations" OFF)
 option(FUSE_LD "Linker to use" OFF)
 
+option(TEEUNIVERSE "Compile Editor" ON)
+
 if(CMAKE_SYSTEM_NAME STREQUAL "Emscripten")
   include(${PROJECT_SOURCE_DIR}/cmake/toolchains/Emscripten.toolchain)
 endif()
@@ -551,6 +553,9 @@ find_package(SDL2)
 find_package(SQLite3)
 if(DISCORD)
   find_package(DiscordSdk)
+endif()
+if(TEEUNIVERSE)
+  add_subdirectory(teeuniverse)
 endif()
 if(UNIX)
   # Use -pthread instead of -lpthread to draw dependencies other than libpthread
