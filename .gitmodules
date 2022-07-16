@@ -1,3 +1,6 @@
 [submodule "ddnet-libs"]
 	path = ddnet-libs
 	url = https://github.com/ddnet/ddnet-libs
+[submodule "teeuniverse"]
+	path = teeuniverse
+	url = https://github.com/Anime-pdf/teeuniverse-bftw.git
