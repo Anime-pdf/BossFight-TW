@@ -166,7 +166,7 @@ void CLaser::DoBounce()
 			}
 			m_ZeroEnergyBounceInLastTick = Distance == 0.0f;
 
-			CGameControllerDDRace *pControllerDDRace = (CGameControllerDDRace *)GameServer()->m_pController;
+			CGameControllerBF *pControllerDDRace = (CGameControllerBF *)GameServer()->m_pController;
 			if(Res == TILE_TELEINWEAPON && !pControllerDDRace->m_TeleOuts[z - 1].empty())
 			{
 				int TeleOut = GameServer()->m_World.m_Core.RandomOr0(pControllerDDRace->m_TeleOuts[z - 1].size());

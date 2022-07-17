@@ -75,7 +75,7 @@ CScore::CScore(CGameContext *pGameServer, CDbConnectionPool *pPool) :
 {
 	auto InitResult = std::make_shared<CScoreInitResult>();
 	auto Tmp = std::make_unique<CSqlInitData>(InitResult);
-	((CGameControllerDDRace *)(pGameServer->m_pController))->m_pInitResult = InitResult;
+	((CGameControllerBF *)(pGameServer->m_pController))->m_pInitResult = InitResult;
 	str_copy(Tmp->m_aMap, g_Config.m_SvMap, sizeof(Tmp->m_aMap));
 
 	uint64_t aSeed[2];
@@ -272,7 +272,7 @@ void CScore::SaveTeam(int ClientID, const char *pCode, const char *pServer)
 {
 	if(RateLimitPlayer(ClientID))
 		return;
-	auto *pController = ((CGameControllerDDRace *)(GameServer()->m_pController));
+	auto *pController = ((CGameControllerBF *)(GameServer()->m_pController));
 	int Team = pController->m_Teams.m_Core.Team(ClientID);
 	if(pController->m_Teams.GetSaving(Team))
 		return;
@@ -300,7 +300,7 @@ void CScore::LoadTeam(const char *pCode, int ClientID)
 {
 	if(RateLimitPlayer(ClientID))
 		return;
-	auto *pController = ((CGameControllerDDRace *)(GameServer()->m_pController));
+	auto *pController = ((CGameControllerBF *)(GameServer()->m_pController));
 	int Team = pController->m_Teams.m_Core.Team(ClientID);
 	if(pController->m_Teams.GetSaving(Team))
 		return;

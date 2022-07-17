@@ -304,15 +304,15 @@ void CGameContext::ConToTeleporter(IConsole::IResult *pResult, void *pUserData)
 {
 	CGameContext *pSelf = (CGameContext *)pUserData;
 	unsigned int TeleTo = pResult->GetInteger(0);
-	CGameControllerDDRace *pGameControllerDDRace = (CGameControllerDDRace *)pSelf->m_pController;
+	CGameControllerBF *pGameControllerBF = (CGameControllerBF *)pSelf->m_pController;
 
-	if(!pGameControllerDDRace->m_TeleOuts[TeleTo - 1].empty())
+	if(!pGameControllerBF->m_TeleOuts[TeleTo - 1].empty())
 	{
 		CCharacter *pChr = pSelf->GetPlayerChar(pResult->m_ClientID);
 		if(pChr)
 		{
-			int TeleOut = pSelf->m_World.m_Core.RandomOr0(pGameControllerDDRace->m_TeleOuts[TeleTo - 1].size());
-			pSelf->Teleport(pChr, pGameControllerDDRace->m_TeleOuts[TeleTo - 1][TeleOut]);
+			int TeleOut = pSelf->m_World.m_Core.RandomOr0(pGameControllerBF->m_TeleOuts[TeleTo - 1].size());
+			pSelf->Teleport(pChr, pGameControllerBF->m_TeleOuts[TeleTo - 1][TeleOut]);
 		}
 	}
 }
@@ -321,15 +321,15 @@ void CGameContext::ConToCheckTeleporter(IConsole::IResult *pResult, void *pUserD
 {
 	CGameContext *pSelf = (CGameContext *)pUserData;
 	unsigned int TeleTo = pResult->GetInteger(0);
-	CGameControllerDDRace *pGameControllerDDRace = (CGameControllerDDRace *)pSelf->m_pController;
+	CGameControllerBF *pGameControllerBF = (CGameControllerBF *)pSelf->m_pController;
 
-	if(!pGameControllerDDRace->m_TeleCheckOuts[TeleTo - 1].empty())
+	if(!pGameControllerBF->m_TeleCheckOuts[TeleTo - 1].empty())
 	{
 		CCharacter *pChr = pSelf->GetPlayerChar(pResult->m_ClientID);
 		if(pChr)
 		{
-			int TeleOut = pSelf->m_World.m_Core.RandomOr0(pGameControllerDDRace->m_TeleCheckOuts[TeleTo - 1].size());
-			pSelf->Teleport(pChr, pGameControllerDDRace->m_TeleCheckOuts[TeleTo - 1][TeleOut]);
+			int TeleOut = pSelf->m_World.m_Core.RandomOr0(pGameControllerBF->m_TeleCheckOuts[TeleTo - 1].size());
+			pSelf->Teleport(pChr, pGameControllerBF->m_TeleCheckOuts[TeleTo - 1][TeleOut]);
 			pChr->m_TeleCheckpoint = TeleTo;
 		}
 	}
@@ -722,7 +722,7 @@ void CGameContext::ConModerate(IConsole::IResult *pResult, void *pUserData)
 void CGameContext::ConSetDDRTeam(IConsole::IResult *pResult, void *pUserData)
 {
 	CGameContext *pSelf = (CGameContext *)pUserData;
-	CGameControllerDDRace *pController = (CGameControllerDDRace *)pSelf->m_pController;
+	CGameControllerBF *pController = (CGameControllerBF *)pSelf->m_pController;
 
 	if(g_Config.m_SvTeam == SV_TEAM_FORBIDDEN || g_Config.m_SvTeam == SV_TEAM_FORCED_SOLO)
 	{
@@ -748,7 +748,7 @@ void CGameContext::ConSetDDRTeam(IConsole::IResult *pResult, void *pUserData)
 void CGameContext::ConUninvite(IConsole::IResult *pResult, void *pUserData)
 {
 	CGameContext *pSelf = (CGameContext *)pUserData;
-	CGameControllerDDRace *pController = (CGameControllerDDRace *)pSelf->m_pController;
+	CGameControllerBF *pController = (CGameControllerBF *)pSelf->m_pController;
 
 	pController->m_Teams.SetClientInvited(pResult->GetInteger(1), pResult->GetVictim(), false);
 }

@@ -444,7 +444,7 @@ int CSaveTeam::Save(int Team)
 {
 	if(g_Config.m_SvTeam == SV_TEAM_FORCED_SOLO || (Team > 0 && Team < MAX_CLIENTS))
 	{
-		CGameTeams *pTeams = &(((CGameControllerDDRace *)m_pController)->m_Teams);
+		CGameTeams *pTeams = &(((CGameControllerBF *)m_pController)->m_Teams);
 
 		m_MembersCount = pTeams->Count(Team);
 		if(m_MembersCount <= 0)
@@ -525,7 +525,7 @@ bool CSaveTeam::HandleSaveError(int Result, int ClientID, CGameContext *pGameCon
 
 void CSaveTeam::Load(int Team, bool KeepCurrentWeakStrong)
 {
-	CGameTeams *pTeams = &(((CGameControllerDDRace *)m_pController)->m_Teams);
+	CGameTeams *pTeams = &(((CGameControllerBF *)m_pController)->m_Teams);
 
 	pTeams->ChangeTeamState(Team, m_TeamState);
 	pTeams->SetTeamLock(Team, m_TeamLocked);
